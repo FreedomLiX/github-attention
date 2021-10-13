@@ -1,6 +1,7 @@
 """
-self attention ViT Net paper,
+self attention ViT Net paper, from yolov5.
 Transformer block.
+B C H W ==> to_qkv()
 """
 import torch
 from torch import nn
