@@ -50,11 +50,7 @@ class BottleneckWithSeparableConv2d(nn.Module):
     def forward(self, x):
         pass
 
-
 if __name__ == '__main__':
-    # data = torch.rand(10, 64, 521, 512)
-    # se = SeparableConv2d(64, 32, kernel_size=5, dilation=3)
-    # out = se(data)
-    # print(out.shape)
-    for i in range(16):
-        exec(f'print(block{i + 4})')
+    data = torch.rand(10, 521, 512, 64)
+    out = window_partition(data, 32)
+    print(out.shape)
